@@ -1,0 +1,65 @@
+INTRODUCTION
+In this year’s WiDS Datathon, participants will be tasked with building a model to predict both an individual’s sex and their ADHD diagnosis using functional brain imaging data of children and adolescents and their socio-demographic, emotions, and parenting information. ADHD occurs in about 11% of adolescents, with around 14% of boys and 8% of girls having a diagnosis. Females are much harder to predict and diagnose.
+
+Importantly, they help shed light on the parts of the brain relevant to ADHD in females and males, which in turn could lead to improvements in personalized medicine and therapies. Identifying ADHD early and designing therapies targeting specific brain mechanisms in a personalized way can greatly improve the mental health of affected individuals.
+
+“What brain activity patterns are associated with ADHD; are they different between males and females, and, if so, how?”
+The task is to create a multi-outcome model to predict two separate target variables: 1) ADHD (1=yes or 0=no) and 2) female (1=yes or 0=no).
+
+We will analyze diagnostic data, socio-demographic, emotions, and parenting data, and functional MRI data from the Healthy Brain Network (HBN) — the signature scientific initiative of the Child Mind Institute. HBN utilizes a community-referred recruitment model by encouraging the participation of families who have concerns about mental health or learning challenges in their children. The functional MRI data are used to extract a time series of activity per brain region, and these regions’ time series are correlated to obtain functional MRI connectome matrices.
+
+----------------
+DATA
+(1) the training folder train_new_tsv consists of three types of information about the 1,200+ subjects. They are:
+a) the targets (ADHD diagnosis and sex)
+b) functional MRI connectome matrices
+c) socio-demographic information, e.g., subject’s “handedness” or “parent’s education level”, emotions (“Strength and Difficulties Questionnaire”), and parenting information (“Alabama Parenting Questionnaire”). These include both quantitative and categorical metadata.
+
+(2) the test folder test_tsv consists of unseen data frames for 300+ subjects. These data frames are as follows:
+a) functional MRI connectome matrices
+b) socio-demographic, emotions, and parenting information
+To participate in the Datathon, you will submit a solution file containing the type of ADHD diagnosis and the sex for each row in the test dataset. The predicted values you submit will be compared against the observed values for the test dataset and this will determine your standing on the Leaderboard during the competition as well as your final standing when the competition closes.
+
+There is a categorical dataset and a functional connectome dataset -> Preprocess and combine to create a final training dataset to use.
+
+----------------
+SKILLS NEEDED:
++ Data cleaning and preprocessing for model development and analysis
++ Understanding correlations
++ Regression model selection (statistical, machine learning)
++ Regression model fitting/testing (cross validation, avoiding over/underfitting, stratification of data during training)
++ Explaining factors that drive the performance of the model
++ Multi-outcome prediction
+
+----------------
+EVALUATION METRIC
+Since the theme of this challenge is to uncover gender inequities and because ADHD diagnosis is harder for females to predict, for the purposes of this competition we are assigning 2x weight to Female ADHD cases (ADHD_Outcome=1, Sex_F=1). In our implementation of the F1 Score, weighted F1 Score is calculated on each column, and those two individual scores are averaged to get the final Kaggle leaderboard score.
+
+----------------
+SUBMISSION FORMAT
+For every participant (i.e. row) in the test dataset (test_tsv), submission files should contain three columns: participant_id and ADHD_Outcome and Sex_F. participant_id should be an integer and ADHD_Outcome and Sex_F should both be a real value. For each row, these three values should be separated by a comma
+
+participant_id,ADHD_Outcome,Sex_F
+v1nMpCoLGU0V, 1, 1
+uEZHGukIUQ0k, 0, 1
+IbF3zW0Wbx4Q, 0, 0
+
+NOTE!!! During the competition the leaderboard is calculated with approximately 51% of the test data. After the competition closes, the final standings will be computed based on the other 49%. Thus, the final leaderboard standings may be different from those during the competition.
+
+----------------
+PRIZES
+1st place
+$3,000 Kaggle cash prize for the team
+WiDS Worldwide event ticket for each team member
+WiDS Datathon award certificate for each team member
+
+
+Fill nans, deal with outliers (plot distribution)
+Train/test data distribution, performance of model among the different splits
+Threshold optimization
+Hyperparameters tuning
+Feature engineering, feature selection, feature importance (hard)
+Modeling (model choices, two models vs one model), regularization
+Statistical diagnostics
+combine with functional data
+grid search

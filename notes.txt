@@ -53,6 +53,12 @@ $3,000 Kaggle cash prize for the team
 WiDS Worldwide event ticket for each team member
 WiDS Datathon award certificate for each team member
 
+Feature engineering 
+p-value, correlation
+domain knowledge
+interaction features
+
+
 
 Fill nans, deal with outliers (plot distribution)
 Train/test data distribution, performance of model among the different splits
@@ -63,3 +69,11 @@ Modeling (model choices, two models vs one model), regularization
 Statistical diagnostics
 combine with functional data
 grid search
+
+
+
+Stratified K-fold splitting
+Benefits of shared model VS two-models
+Cross-validation, validation set
+coefficients -> feature importance 
+The Kolmogorov–Smirnov and Mann–Whitney U tests

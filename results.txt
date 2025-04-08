@@ -1,0 +1,9 @@
+Stage 1: baseline - 0.73912 
+
+Stage 2: Class weight + additional feature to predict sex when already have ADHD_Prob: 0.74622
+Class weight + SMOTE resampler: 0.72110
+
+Stage 3: Class weight + Additional feature + feature selection based on p-value and corr threshold: 0.76283
+Class weight + Additional feature + feature selection based tree algorithms: 0.76422
+
+Stage 4: 0.75900

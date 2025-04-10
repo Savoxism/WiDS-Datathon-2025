@@ -77,3 +77,11 @@ Benefits of shared model VS two-models
 Cross-validation, validation set
 coefficients -> feature importance 
 The Kolmogorov–Smirnov and Mann–Whitney U tests
+
+Read more about statistics, data preprocessing
+
+
+
+
+
+['SDQ_SDQ_Hyperactivity', 'SDQ_SDQ_Externalizing', 'SDQ_SDQ_Difficulties_Total', 'SDQ_SDQ_Generating_Impact', 'SDQ_SDQ_Conduct_Problems', 'SDQ_SDQ_Internalizing', 'SDQ_SDQ_Peer_Problems', 'SDQ_SDQ_Emotional_Problems', 'SDQ_SDQ_Prosocial', 'Basic_Demos_Enroll_Year', 'singular_value_6', 'eigen_feature_6', 'APQ_P_APQ_P_OPD', 'APQ_P_APQ_P_ID', 'eigen_feature_7', 'singular_value_7', 'eigen_feature_8', 'singular_value_8', 'singular_value_5', 'eigen_feature_5']

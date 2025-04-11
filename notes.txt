@@ -71,7 +71,6 @@ combine with functional data
 grid search
 
 
-
 Stratified K-fold splitting
 Benefits of shared model VS two-models
 Cross-validation, validation set
@@ -81,7 +80,20 @@ The Kolmogorov–Smirnov and Mann–Whitney U tests
 Read more about statistics, data preprocessing
 
 
+Summary and Strategy:
+
+Preprocessing: Handle missing values, encode categorical features appropriately (one-hot for nominal like Race/Site, ordinal for Education/Occupation), and scale numerical features (important for Logistic Regression, potentially helpful for DL, less critical but often harmless for Trees).
+
+Initial Filtering: Use Filter methods (MI, Chi2, ANOVA F-test, Correlation) to get an initial understanding of feature relevance to both targets and remove obviously irrelevant or low-variance features. Check for high inter-feature correlation (VIF) and consider removing redundant features.
+Dimensionality Reduction (fMRI): Apply PCA or feature engineering to the connectome data to create manageable features.
+
+Model-Based Selection:
+For Logistic Regression: Use L1 regularization or RFE/SFS with Logistic Regression as the base model. Pay attention to multicollinearity identified earlier.
+For Tree-based Models: Leverage their built-in feature importance. You can train an initial model (e.g., RandomForestClassifier or XGBClassifier supporting multi-output) on a large set of features and then retrain on a reduced set based on importance scores. RFE/SFS with a tree model can also work well.
+For Deep Learning: While DL can handle high dimensions, feeding it pre-selected/engineered features (especially combining socio-demographic/questionnaire data with reduced fMRI features) can improve performance and reduce training time. Permutation importance calculated on a trained DL model can also guide feature selection.
+
+Validation: Crucially, use cross-validation throughout the feature selection process (especially for Wrapper methods) and evaluate the final feature set's performance on a hold-out set or via cross-validation using the official weighted average F1 score to avoid overfitting the selection process to the training data.
+
+Consider an iterative approach: start with filter methods, then refine using wrapper or embedded methods tailored to your chosen model family (or ensemble components). Always keep the specific evaluation metric (weighted F1) in mind when assessing feature subsets
 
 
-
-['SDQ_SDQ_Hyperactivity', 'SDQ_SDQ_Externalizing', 'SDQ_SDQ_Difficulties_Total', 'SDQ_SDQ_Generating_Impact', 'SDQ_SDQ_Conduct_Problems', 'SDQ_SDQ_Internalizing', 'SDQ_SDQ_Peer_Problems', 'SDQ_SDQ_Emotional_Problems', 'SDQ_SDQ_Prosocial', 'Basic_Demos_Enroll_Year', 'singular_value_6', 'eigen_feature_6', 'APQ_P_APQ_P_OPD', 'APQ_P_APQ_P_ID', 'eigen_feature_7', 'singular_value_7', 'eigen_feature_8', 'singular_value_8', 'singular_value_5', 'eigen_feature_5']

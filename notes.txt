@@ -94,6 +94,10 @@ For Deep Learning: While DL can handle high dimensions, feeding it pre-selected/
 
 Validation: Crucially, use cross-validation throughout the feature selection process (especially for Wrapper methods) and evaluate the final feature set's performance on a hold-out set or via cross-validation using the official weighted average F1 score to avoid overfitting the selection process to the training data.
 
-Consider an iterative approach: start with filter methods, then refine using wrapper or embedded methods tailored to your chosen model family (or ensemble components). Always keep the specific evaluation metric (weighted F1) in mind when assessing feature subsets
+Consider an iterative approach: start with filter methods, then refine using wrapper or embedded methods tailored to your chosen model family (or ensemble components). Always keep the specific evaluation metric (weighted F1) in mind when assessing feature subsets.
 
-
+catboost 100 500 1000 iterations-> Ensemble  (could take 1-2 hours on GPU) -> Known to produce SOTA resutls
+Feature selection techniques, dựa trên domain knowledge, nhóm dữ liệu tính tương quan cao, hiểu bản chất feature
+fMRI
+Deep learning (With ensemble learning) + feature transformation
+Support Vector Machines 

@@ -58,8 +58,6 @@ p-value, correlation
 domain knowledge
 interaction features
 
-
-
 Fill nans, deal with outliers (plot distribution)
 Train/test data distribution, performance of model among the different splits
 Threshold optimization
@@ -78,7 +76,6 @@ coefficients -> feature importance
 The Kolmogorov–Smirnov and Mann–Whitney U tests
 
 Read more about statistics, data preprocessing
-
 
 Summary and Strategy:
 
@@ -101,3 +98,10 @@ Feature selection techniques, dựa trên domain knowledge, nhóm dữ liệu t�
 fMRI
 Deep learning (With ensemble learning) + feature transformation
 Support Vector Machines 
+
+Collapse features better for categorical features?
+Visualize the connectome matrices (see what regions are often active when diagnosed with ADHD)
+Train a specific CNN for this matrix (Đoán 4 cái outcome, also plot the distribution of labels)
+Đoán 1 phát 2 labels (logistic regression / neural network), CNN cx vậy (baseline approach)
+XGBOOST, LightGBM --> Gradient boosting machines 
+Read more about probabilistic models, Bayesian inference (MCMC)

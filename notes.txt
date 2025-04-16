@@ -53,6 +53,7 @@ $3,000 Kaggle cash prize for the team
 WiDS Worldwide event ticket for each team member
 WiDS Datathon award certificate for each team member
 
+### 6/4/2025
 Feature engineering 
 p-value, correlation
 domain knowledge
@@ -68,40 +69,31 @@ Statistical diagnostics
 combine with functional data
 grid search
 
-
-Stratified K-fold splitting
-Benefits of shared model VS two-models
-Cross-validation, validation set
-coefficients -> feature importance 
-The Kolmogorov–Smirnov and Mann–Whitney U tests
-
-Read more about statistics, data preprocessing
-
-Summary and Strategy:
-
-Preprocessing: Handle missing values, encode categorical features appropriately (one-hot for nominal like Race/Site, ordinal for Education/Occupation), and scale numerical features (important for Logistic Regression, potentially helpful for DL, less critical but often harmless for Trees).
-
-Initial Filtering: Use Filter methods (MI, Chi2, ANOVA F-test, Correlation) to get an initial understanding of feature relevance to both targets and remove obviously irrelevant or low-variance features. Check for high inter-feature correlation (VIF) and consider removing redundant features.
-Dimensionality Reduction (fMRI): Apply PCA or feature engineering to the connectome data to create manageable features.
-
-Model-Based Selection:
-For Logistic Regression: Use L1 regularization or RFE/SFS with Logistic Regression as the base model. Pay attention to multicollinearity identified earlier.
-For Tree-based Models: Leverage their built-in feature importance. You can train an initial model (e.g., RandomForestClassifier or XGBClassifier supporting multi-output) on a large set of features and then retrain on a reduced set based on importance scores. RFE/SFS with a tree model can also work well.
-For Deep Learning: While DL can handle high dimensions, feeding it pre-selected/engineered features (especially combining socio-demographic/questionnaire data with reduced fMRI features) can improve performance and reduce training time. Permutation importance calculated on a trained DL model can also guide feature selection.
-
-Validation: Crucially, use cross-validation throughout the feature selection process (especially for Wrapper methods) and evaluate the final feature set's performance on a hold-out set or via cross-validation using the official weighted average F1 score to avoid overfitting the selection process to the training data.
-
-Consider an iterative approach: start with filter methods, then refine using wrapper or embedded methods tailored to your chosen model family (or ensemble components). Always keep the specific evaluation metric (weighted F1) in mind when assessing feature subsets.
-
+### 11/4/2025
 catboost 100 500 1000 iterations-> Ensemble  (could take 1-2 hours on GPU) -> Known to produce SOTA resutls
 Feature selection techniques, dựa trên domain knowledge, nhóm dữ liệu tính tương quan cao, hiểu bản chất feature
 fMRI
 Deep learning (With ensemble learning) + feature transformation
 Support Vector Machines 
 
+
+### 14/4/2025
 Collapse features better for categorical features?
+
+RESEARCH RESEARCH RESEARCH
 Visualize the connectome matrices (see what regions are often active when diagnosed with ADHD)
-Train a specific CNN for this matrix (Đoán 4 cái outcome, also plot the distribution of labels)
-Đoán 1 phát 2 labels (logistic regression / neural network), CNN cx vậy (baseline approach)
+
+Train a specific CNN for this matrix 
+
 XGBOOST, LightGBM --> Gradient boosting machines 
+
 Read more about probabilistic models, Bayesian inference (MCMC)
+
+
+### 15/4/2025
+tăng hidden layer, batch size, read about tensorflow hyperparam tuning (how is it done?) -> neural network approach
+
+Read about tree-based algorithms and ensemble learning
+lần mò từ từ trước (KO CẦN GRID SEARCH) -> tăng iter -> depth (max could be 15)
+
+catboost ko cần normalize categorical features, class weight, loss function, consider predicting multi output (used feature or let it do it intrinsically (BUT NO GPU))

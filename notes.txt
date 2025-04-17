@@ -87,20 +87,21 @@ Train a specific CNN for this matrix
 
 Read more about probabilistic models, Bayesian inference (MCMC)
 
+--------------------------------------------------------------------------------------------------------------
 ### 15/4/2025
 initialization weights, number of neurons in each layer, tăng hidden layer, batch size, read about tensorflow hyperparam tuning (how is it done?) -> neural network approach
++ Dropout, batch normalization, data augmentation, early stopping 
 
 Catboost: lần mò từ trước (KO CẦN GRID SEARCH) -> tăng iter -> depth (max could be 15)
-catboost ko cần normalize categorical features, class weight, loss function, consider predicting multi output (used feature or let it do it intrinsically (BUT NO GPU))
-ensemble learning: majority voting, weighted average, gating, bootstrap sampling (Stratified), bagging, stacking, boosting
+Catboost ko cần normalize categorical features, class weight, loss function, consider predicting multi-output (used feature or let it do it intrinsically (BUT NO GPU))
+Ensemble learning: majority voting, weighted average, gating, bootstrap sampling (Stratified), bagging, stacking, boosting
 
 Enhanced neural network -> Ensemble learning bagging + boosting (Catboost (XGBOOST + AdaBoost for boosting) + logistic regression + neural network) (BIG IDEA) -> Combine with fMRI 
 
 AdaBoost never overfits 
 
 Evaluation performance:
-+ Stratified sampling, repeated hold-out sampling, K-fold validation (usually k=5, 10), bootstrap sampling, leave one out cross validation 
-
-
++ Stratified (maintaining the distribution) sampling, repeated hold-out sampling, K-fold validation (usually k=5, 10, stochastic process), bootstrap sampling, leave one out cross validation (deterministic process)
++ Accuracy, confusion matrix, recall, precision, F1-score
 
 

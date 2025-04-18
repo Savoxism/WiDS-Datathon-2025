@@ -85,7 +85,7 @@ Visualize the connectome matrices (see what regions are often active when diagno
 
 Train a specific CNN for this matrix 
 
-Read more about probabilistic models, Bayesian inference (MCMC)
+Read more about probabilistic models, Bayesian inference (MCMC).
 
 --------------------------------------------------------------------------------------------------------------
 ### 15/4/2025
@@ -104,5 +104,5 @@ AdaBoost never overfits
 Evaluation performance:
 + Stratified (maintaining the distribution) sampling, repeated hold-out sampling, K-fold validation (usually k=5, 10, stochastic process), bootstrap sampling, leave one out cross validation (deterministic process)
 + Accuracy, confusion matrix, recall, precision, F1-score
- 
+
 

@@ -89,8 +89,9 @@ Read more about probabilistic models, Bayesian inference (MCMC)
 
 --------------------------------------------------------------------------------------------------------------
 ### 15/4/2025
-initialization weights, number of neurons in each layer, tăng hidden layer, batch size, read about tensorflow hyperparam tuning (how is it done?) -> neural network approach
-+ Dropout, batch normalization, data augmentation, early stopping 
+initialization weights (follows Gaussian distribution), number of neurons in each layer, tăng hidden layer, batch size, read about tensorflow hyperparam tuning (how is it done?) -> neural network approach
++ Dropout, batch normalization, data augmentation, early stopping, L1/L2 regularization 
+
 
 Catboost: lần mò từ trước (KO CẦN GRID SEARCH) -> tăng iter -> depth (max could be 15)
 Catboost ko cần normalize categorical features, class weight, loss function, consider predicting multi-output (used feature or let it do it intrinsically (BUT NO GPU))
@@ -103,5 +104,5 @@ AdaBoost never overfits
 Evaluation performance:
 + Stratified (maintaining the distribution) sampling, repeated hold-out sampling, K-fold validation (usually k=5, 10, stochastic process), bootstrap sampling, leave one out cross validation (deterministic process)
 + Accuracy, confusion matrix, recall, precision, F1-score
-
+ 
 

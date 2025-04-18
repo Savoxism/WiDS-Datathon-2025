@@ -85,7 +85,7 @@ Visualize the connectome matrices (see what regions are often active when diagno
 
 Train a specific CNN for this matrix 
 
-Read more about probabilistic models, Bayesian inference (MCMC)
+Read more about probabilistic models, Bayesian inference (MCMC).
 
 --------------------------------------------------------------------------------------------------------------
 ### 15/4/2025
@@ -103,5 +103,20 @@ AdaBoost never overfits
 Evaluation performance:
 + Stratified (maintaining the distribution) sampling, repeated hold-out sampling, K-fold validation (usually k=5, 10, stochastic process), bootstrap sampling, leave one out cross validation (deterministic process)
 + Accuracy, confusion matrix, recall, precision, F1-score
+
+Đối với trường hợp có quá nhiều biến cần kiểm tra thì chúng ta có thể đối chiếu với phân phối của dữ liệu lịch sử để xem xét những thay đổi của biến. Điều này rất quan trọng vì sự thay đổi của biến sẽ ảnh hưởng trực tiếp tới đầu ra của mô hình.
+
+Theo kinh nghiệm thì các nhãn thiểu số lại có thể là đặc trưng riêng của một nhãn đầu ra. Vì thế chúng ta có thể khảo sát thêm tỷ lệ giữa GOOD/BAD cách biệt như thế nào ở những nhãn này. Kết quả đánh giá chúng có thể giúp ta đưa ra một số kết luận hữu ích đối với phân loại nhãn.
+
+False positive: type I error -> chấp nhận 1 điều sai -> hậu quả vô cùng nghiêm trọng 
+
+False negative: type II error -> Bác bỏ 1 điều đúng -> hậu quả ít nghiêm trọng hơn type i
+
+recall thấp -> false negative nhiểu -> dự đoán quan sát positive thành negative 
+
+Bộ dữ liệu german credit có tính chất mất cân bằng nên chúng ta sẽ lựa chọn f-score thay cho accuracy. Hơn nữa trong mô tả của bộ dữ liệu đã qui định: It is worse to class a customer as good when they are bad (5), than it is to class a customer as bad when they are good (1). -----> refresh on the idea of class weight 
+
+
+
 
 

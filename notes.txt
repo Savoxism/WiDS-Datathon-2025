@@ -92,7 +92,6 @@ Read more about probabilistic models, Bayesian inference (MCMC).
 initialization weights (follows Gaussian distribution), number of neurons in each layer, tăng hidden layer, batch size, read about tensorflow hyperparam tuning (how is it done?) -> neural network approach
 + Dropout, batch normalization, data augmentation, early stopping, L1/L2 regularization 
 
-
 Catboost: lần mò từ trước (KO CẦN GRID SEARCH) -> tăng iter -> depth (max could be 15)
 Catboost ko cần normalize categorical features, class weight, loss function, consider predicting multi-output (used feature or let it do it intrinsically (BUT NO GPU))
 Ensemble learning: majority voting, weighted average, gating, bootstrap sampling (Stratified), bagging, stacking, boosting
@@ -105,4 +104,47 @@ Evaluation performance:
 + Stratified (maintaining the distribution) sampling, repeated hold-out sampling, K-fold validation (usually k=5, 10, stochastic process), bootstrap sampling, leave one out cross validation (deterministic process)
 + Accuracy, confusion matrix, recall, precision, F1-score
 
++ Đối với trường hợp có quá nhiều biến cần kiểm tra thì chúng ta có thể đối chiếu với phân phối của dữ liệu lịch sử để xem xét những thay đổi của biến. Điều này rất quan trọng vì sự thay đổi của biến sẽ ảnh hưởng trực tiếp tới đầu ra của mô hình.
+ 
++ Theo kinh nghiệm thì các nhãn thiểu số lại có thể là đặc trưng riêng của một nhãn đầu ra. Vì thế chúng ta có thể khảo sát thêm tỷ lệ giữa GOOD/BAD cách biệt như thế nào ở những nhãn này. Kết quả đánh giá chúng có thể giúp ta đưa ra một số kết luận hữu ích đối với phân loại nhãn.
 
+False positive: type I error -> chấp nhận 1 điều sai -> hậu quả vô cùng nghiêm trọng 
+
+False negative: type II error -> Bác bỏ 1 điều đúng -> hậu quả ít nghiêm trọng hơn type i
+
+recall thấp -> false negative nhiểu -> dự đoán quan sát positive thành negative 
+
+Bộ dữ liệu german credit có tính chất mất cân bằng nên chúng ta sẽ lựa chọn f-score thay cho accuracy. Hơn nữa trong mô tả của bộ dữ liệu đã qui định: It is worse to class a customer as good when they are bad (5), than it is to class a customer as bad when they are good (1). -----> refresh on the idea of class weight 
+
++ ROC curve: Receiver Operating Characteristic curve -> evaluate the performance of a binary classifier 
+
+LOFO is great for identifying redundant features and capturing how feature interactions impact model performance.
+BorutaShap and Permutation Importance help verify whether a feature is truly useful for prediction.
+And tree-based importance scores like Gain, Cover, and Total Gain give powerful insights directly from the model structure.
+
+----------
+22/4/2025
+Test on SVM first, look for foundational model on fMRI 
+
+tabular + real number -> regression tree (1st method)
+
+feature importance: correlation (num vs num) (cat vs cat) each one has its own unique metrics 
+
+G -> mô hình hóa đồ thị đầy đủ -> Clustering -> phân nhóm khu vực trên đồ thị -> đồ thị thưa -> graph embedding
+Girvenn Newam Louvain
+=> Phân tách ma trận
+
++ more feasible: 200 x 200 square matrix (non matrix factorization) -> Q (ALS, ANLS, MU, SGD) -> vector embedding, matrix embedding
+====> normalized -> KNN (0,1) -> similarity search + [1, 1, 0, 0, 1] (label from numerical + categorical features) (with and without this)
+====> tạo mô hình vector embedding, tận dụng nhãn còn lại vector embedding + bow
+====> voting 
+
+What if there is link between fMRI and demographics -> concatenate the last hidden states + graph embeddings 
+
+định nghĩa cấu trúc -> train -> baselines 
+
+binarize fmri matrix 
+
+keep on researching 
+
+Spill tree

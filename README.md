@@ -13,9 +13,9 @@ Data includes:
 
 AHDH Outcome
 
-![Default](attachments\adhd_features.png "AHDH Feature Importance")
+![Default](attachments/adhd_features.png "AHDH Feature Importance")
 
 Sex
 
-![alt text](attachments\sex_features.png "AHDH Feature Importance")
+![alt text](attachments/sex_features.png "AHDH Feature Importance")
 

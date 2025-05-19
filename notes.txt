@@ -4,9 +4,8 @@ In this year’s WiDS Datathon, participants will be tasked with building a mode
 Importantly, they help shed light on the parts of the brain relevant to ADHD in females and males, which in turn could lead to improvements in personalized medicine and therapies. Identifying ADHD early and designing therapies targeting specific brain mechanisms in a personalized way can greatly improve the mental health of affected individuals.
 
 “What brain activity patterns are associated with ADHD; are they different between males and females, and, if so, how?”
-The task is to create a multi-outcome model to predict two separate target variables: 1) ADHD (1=yes or 0=no) and 2) female (1=yes or 0=no).
 
-We will analyze diagnostic data, socio-demographic, emotions, and parenting data, and functional MRI data from the Healthy Brain Network (HBN) — the signature scientific initiative of the Child Mind Institute. HBN utilizes a community-referred recruitment model by encouraging the participation of families who have concerns about mental health or learning challenges in their children. The functional MRI data are used to extract a time series of activity per brain region, and these regions’ time series are correlated to obtain functional MRI connectome matrices.
+
 
 ----------------
 DATA
@@ -143,8 +142,6 @@ What if there is link between fMRI and demographics -> concatenate the last hidd
 
 định nghĩa cấu trúc -> train -> baselines 
 
-binarize fmri matrix 
-
-keep on researching 
+binarize fmri matrix  
 
 Spill tree

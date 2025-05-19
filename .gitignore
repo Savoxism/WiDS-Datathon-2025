@@ -1,7 +1,5 @@
 # project-wide
 data
-test_processed.csv
-train_processed.csv
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
